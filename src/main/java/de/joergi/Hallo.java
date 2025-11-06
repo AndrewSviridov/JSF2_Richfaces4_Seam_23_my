@@ -4,7 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 import org.jboss.seam.annotations.AutoCreate;
+import org.jboss.seam.annotations.In;
 import org.jboss.seam.annotations.Name;
+
+import javax.persistence.EntityManager;
 
 @Name("hallo")
 @AutoCreate
@@ -12,6 +15,8 @@ public class Hallo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@In
+	private EntityManager em;
 	private String input;
 	
 	private String color;
